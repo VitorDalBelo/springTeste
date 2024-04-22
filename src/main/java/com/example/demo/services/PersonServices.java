@@ -21,12 +21,6 @@ public class PersonServices {
 
    public Person findById(Long id){
       logger.info("Finding for one person");
-      Person person = new Person();
-      person.setId(counter.incrementAndGet());
-      person.setFirstName("João");
-      person.setLastName("Silva");
-      person.setAddress("Rua ABC, 123");
-      person.setGender("Masculino");
 
       return personRepository.findById(id)
             .orElseThrow(()-> new ResourceNotFoundException("Person not found"));
